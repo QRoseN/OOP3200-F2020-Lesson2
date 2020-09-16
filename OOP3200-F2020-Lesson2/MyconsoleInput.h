@@ -6,10 +6,13 @@
 
 #include <limits> 
 #include <cfloat>  // for limits of a double DBL_MIN and DBL_MAX
-#include "MyConsoleInput.cpp"
 
-namespace ConsoleInput
+
+class ConsoleInput
 {
+public:
+
+	
 	/**	ReadDouble function
 	 * Reads a valid double value from the console with range checking
 	 *
@@ -17,7 +20,7 @@ namespace ConsoleInput
 	 * @param  MIN the minimum value the user may enter; defaults to the maximum double.
 	 * @return A validated double input by the user.
 	*/
-	double ReadDouble(const double MIN = -DBL_MAX, const double MAX = DBL_MAX);
+	static double ReadDouble(const double MIN = -DBL_MAX, const double MAX = DBL_MAX);
 
 	/**	ReadInteger function
 	 * Reads a valid int value from the console with range checking
@@ -26,7 +29,7 @@ namespace ConsoleInput
 	 * @param  MIN the minimum value the user may enter; defaults to the maximum int.
 	 * @return A validated int input by the user.
 	*/
-	int ReadInteger(const int MIN = INT_MIN, const int MAX = INT_MAX);
+	static int ReadInteger(const int MIN = INT_MIN, const int MAX = INT_MAX);
 
-}
+};
 #endif // end of ifndef MY_CONSOLE_INPUT_H
